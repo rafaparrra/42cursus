@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rparra-t <rparra-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 16:17:29 by rparra-t          #+#    #+#             */
-/*   Updated: 2022/10/01 12:05:11 by rparra-t         ###   ########.fr       */
+/*   Created: 2022/10/01 12:12:14 by rparra-t          #+#    #+#             */
+/*   Updated: 2022/10/01 13:17:33 by rparra-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t			cont;
-	unsigned char	*string1;
-	unsigned char	*string2;
+	void	*s;
+	size_t	len;
 
-	cont = 0;
-	string1 = (unsigned char *)dst;
-	string2 = (unsigned char *)src;
-	while ((string1 != NULL || string2 != NULL) && cont < n)
-	{
-		string1[cont] = string2[cont];
-		cont++;
+	if (count == 0 || size == 0)
+	{	
+		count = 1;
+		size = 1;
 	}
-	return (string1);
+	len = count * size;
+	s = (char *)malloc(len);
+	if (!s)
+		return (NULL);
+	ft_bzero(s, len);
+	return (s);
 }
