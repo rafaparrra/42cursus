@@ -6,7 +6,7 @@
 /*   By: rparra-t <rparra-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 17:35:56 by rparra-t          #+#    #+#             */
-/*   Updated: 2022/10/01 13:23:48 by rparra-t         ###   ########.fr       */
+/*   Updated: 2022/10/01 15:27:01 by rparra-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
