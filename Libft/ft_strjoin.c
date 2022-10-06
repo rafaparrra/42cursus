@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rparra-t <rparra-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 12:12:14 by rparra-t          #+#    #+#             */
-/*   Updated: 2022/10/03 15:57:31 by rparra-t         ###   ########.fr       */
+/*   Created: 2022/10/03 15:37:28 by rparra-t          #+#    #+#             */
+/*   Updated: 2022/10/03 18:38:20 by rparra-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	void	*s;
-	size_t	len;
+	char	*string;
+	int		cont;
+	int		len1;
+	int		len2;
 
-	if (count == 0 || size == 0)
-	{	
-		count = 1;
-		size = 1;
-	}
-	len = count * size;
-	s = (char *)malloc(len);
-	if (!s)
+	cont = 0;
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	string = (char *)malloc(sizeof (char) * (len1 + len2 + 1));
+	if (!string)
 		return (NULL);
-	ft_bzero(s, len);
-	return (s);
+	while (s1[cont])
+	{	
+		string[cont] = s1[cont];
+	cont++;
+	}
+	cont = 0;
+	while (s2[cont])
+	{
+		string[len1] = s2[cont];
+	cont++;
+	len1++;
+	}
+	string[len1] = '\0';
+	return (string);
 }

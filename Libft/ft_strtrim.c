@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rparra-t <rparra-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 15:49:37 by rparra-t          #+#    #+#             */
-/*   Updated: 2022/10/04 16:20:44 by rparra-t         ###   ########.fr       */
+/*   Created: 2022/10/03 18:39:38 by rparra-t          #+#    #+#             */
+/*   Updated: 2022/10/04 17:57:55 by rparra-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int	cont;
-	unsigned char	*string1;
-	unsigned char	*string2;
+	char	*string;
+	int		cont;
+	int		len;
 
-	string1 = (unsigned char *)s1;
-	string2 = (unsigned char *)s2;
-	if (n == 0)
-		return (0);
 	cont = 0;
-	while (string1[cont] == string2[cont] && string1[cont]
-		&& string2[cont] && cont < n)
+	len = ft_strlen(s1) - 1;
+	while (s1[cont] && ft_strchr(set, s1[cont]))
 		cont++;
-	if (cont == n)
-		cont--;
-	return (string1[cont] - string2[cont]);
+	while (s1[cont] && s1[len] && ft_strrchr(set, s1[len]))
+		len--;
+	string = ft_substr(s1, cont, len - cont + 1);
+	return (string);
 }
