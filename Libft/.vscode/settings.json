@@ -2,5 +2,6 @@
 	"files.associations": {
 		"string": "c",
 		"iosfwd": "c"
-	}
+	},
+	"C_Cpp.errorSquiggles": "Disabled"
 }
