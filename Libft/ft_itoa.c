@@ -6,13 +6,13 @@
 /*   By: rparra-t <rparra-t@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:42:35 by rparra-t          #+#    #+#             */
-/*   Updated: 2022/10/10 20:19:47 by rparra-t         ###   ########.fr       */
+/*   Updated: 2022/10/12 20:01:00 by rparra-t         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_numlen(int n)
+static size_t	ft_numlen(int n)
 {
 	int	cont;
 
