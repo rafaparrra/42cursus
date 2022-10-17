@@ -2,7 +2,8 @@
 	"files.associations": {
 		"string": "c",
 		"iosfwd": "c",
-		"libft.h": "c"
+		"libft.h": "c",
+		"__node_handle": "c"
 	},
 	"C_Cpp.errorSquiggles": "Disabled"
 }
